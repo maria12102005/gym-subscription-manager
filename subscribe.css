@@ -1,0 +1,240 @@
+/* خطوط وتنسيق عام */
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  background-color: #F5F5F5;
+  color: #1C1C1C;
+}
+
+/* الصورة الرئيسية */
+.subscription-hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: url('https://res.cloudinary.com/dchrfb1h9/image/upload/v1750877986/pexels-marta-nogueira-589022975-17093368_xifpet.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.subscription-hero::after {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.overlay {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(245, 245, 245, 0.92);
+  padding: 3rem;
+  border-radius: 20px;
+  max-width: 600px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.subscription-hero form {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.2rem;
+}
+
+.subscription-hero input[type="radio"] {
+  margin-left: 0.5rem;
+}
+
+/* كروت الباقات */
+.plans {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 1rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  padding: 2rem;
+  text-align: center;
+  width: 280px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: #1C1C1C;
+}
+
+.card .price {
+  font-size: 2rem;
+  color: #379683;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.card ul li {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.card .btn {
+  background-color: #379683;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.card .btn:hover {
+  background-color: #2e7161;
+}
+
+.card.popular {
+  border: 2px solid #379683;
+}
+
+/* قسم الاشتراك الأخير */
+.subscription-form {
+  background: linear-gradient(135deg, #ffffff, #eafaf5);
+  padding: 5rem 1.5rem;
+  text-align: center;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.02);
+}
+
+.subscription-form h2 {
+  font-size: 2.4rem;
+  color: #1c1c1c;
+  margin-bottom: 1rem;
+}
+
+.subscription-form p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.subscription-form form {
+  max-width: 520px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+.subscription-form input,
+.subscription-form select {
+  padding: 0.9rem 1.2rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.subscription-form input:focus,
+.subscription-form select:focus {
+  border-color: #379683;
+  box-shadow: 0 0 5px rgba(55, 150, 131, 0.3);
+}
+
+.subscription-form button {
+  background: linear-gradient(45deg, #379683, #2e7161);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+.subscription-form button:hover {
+  transform: scale(1.03);
+  background: linear-gradient(45deg, #2e7161, #379683);
+  animation: buttonBounce 0.4s ease;
+}
+
+/* ✨ الحركات */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes buttonBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+.schedule-info {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #1c1c1c;
+  background-color: #ffffffd6;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  line-height: 1.6;
+}
+.success-message {
+  display: none;
+  background-color: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 1rem;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
