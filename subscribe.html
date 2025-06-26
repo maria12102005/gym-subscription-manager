@@ -1,191 +1,132 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GymPro  - الاشتراك</title>
-  <link rel="stylesheet" href="subscribe.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GymPro - الاشتراك</title>
+    <link rel="stylesheet" href="subscribe.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body style="font-family: 'Cairo', sans-serif;">
+    <!-- ✅ الصفحة الرئيسية للاشتراك -->
+    <section class="subscription-hero" id="subscriptionSection">
+      <div class="overlay">
+        <h2>اختر نوع الاشتراك</h2>
+        <p>يرجى اختيار نوع الحساب المناسب لتخصيص تجربتك</p>
+        <form id="genderSelector">
+          <label><input type="radio" name="gender" value="male" /> رجال</label>
+          <label><input type="radio" name="gender" value="female" /> نساء</label>
+        </form>
 
- <section class="subscription-hero" id="subscriptionSection">
-  <div class="overlay">
-    <h2>اختر نوع الاشتراك</h2>
-    <p>يرجى اختيار نوع الحساب المناسب لتخصيص تجربتك</p>
-    <form id="genderSelector">
-      <label><input type="radio" name="gender" value="male"> رجال</label>
-      <label><input type="radio" name="gender" value="female"> نساء</label>
-    </form>
+        <div class="schedule-info" id="scheduleInfo">
+          <!-- بيتعبّى بالجافاسكربت -->
+        </div>
+      </div>
+    </section>
 
-    <!-- 👇 أوقات الدوام -->
-    <div class="schedule-info" id="scheduleInfo">
-      <!-- بيتعبّى تلقائيًا بالجافاسكربت -->
-    </div>
+    <!-- ✅ الباقات -->
+    <section class="plans">
+      <div class="card">
+        <h3>باقة شهرية</h3>
+        <p class="price">5$<br />50,000 SYP</p>
+        <ul>
+          <li>دخول غير محدود</li>
+          <li>تمارين جماعية</li>
+          <li>تتبع تقدم</li>
+        </ul>
+        <a href="#subscriptionForm" class="btn">اشترك الآن</a>
+      </div>
+
+      <div class="card popular">
+        <h3>باقة سنوية</h3>
+        <p class="price">55$<br />550,000 SYP</p>
+        <ul>
+          <li>دخول غير محدود</li>
+          <li>مدرّب شخصي</li>
+          <li>حصص تغذية</li>
+        </ul>
+        <a href="#subscriptionForm" class="btn">الأكثر شهرة ⭐</a>
+      </div>
+
+      <div class="card">
+        <h3>باقة 6 أشهر</h3>
+        <p class="price">100$<br />1,000,000 SYP</p>
+        <ul>
+          <li>VIP استضافة</li>
+          <li>خطة مخصصة</li>
+          <li>حصص خاصة + برنامج تغذية</li>
+        </ul>
+        <a href="#subscriptionForm" class="btn">اشترك الآن</a>
+      </div>
+    </section>
+
+    <!-- ✅ نموذج الاشتراك -->
+    <section class="subscription-form" id="subscriptionForm" style="max-width: 600px; margin: auto;">
+      <h2 style="text-align: center;">اشترك الآن</h2>
+      <p style="text-align: center;">اختر طريقة التسجيل:</p>
+
+      <div style="text-align: center; margin-bottom: 15px;">
+        <label><input type="radio" name="method" value="email" checked onchange="toggleForm()" /> عبر الإيميل 📧</label>
+        <label style="margin-right: 15px;"><input type="radio" name="method" value="whatsapp" onchange="toggleForm()" /> عبر واتساب 📱</label>
+      </div>
+
+      <!-- 📧 النموذج -->
+<form id="emailForm" action="https://script.google.com/macros/s/AKfycbwSiuWt-3eeEF2O83vQDjXN_G782C8pI8tzl8W8OwtukbfJzM9WUZk_rHRJMOMY2fhZtg/exec" method="POST" style="border: 1px solid #ccc; border-radius: 10px; padding: 15px; max-width: 600px; margin: auto;">
+  <input type="text" name="fullName" placeholder="الاسم الكامل" required style="width: 100%; padding: 10px; margin: 5px 0;">
+  <input type="email" name="email" placeholder="البريد الإلكتروني" required style="width: 100%; padding: 10px; margin: 5px 0;">
+  <input type="tel" name="phone" placeholder="رقم الهاتف" required style="width: 100%; padding: 10px; margin: 5px 0;">
+
+  <select name="plan" required style="width: 100%; padding: 10px; margin: 5px 0;">
+    <option value="">اختر الباقة</option>
+    <option value="شهرية">شهرية</option>
+    <option value="سنوية">سنوية</option>
+    <option value="Premium">Premium</option>
+  </select>
+
+  <div style="margin: 10px 0;">
+    <label><input type="radio" name="gender" value="ذكر" required> رجال</label>
+    <label style="margin-right: 20px;"><input type="radio" name="gender" value="أنثى"> نساء</label>
   </div>
-</section>
 
-  <!-- ✅ الباقات -->
-  <section class="plans">
-    <div class="card">
-      <h3>باقة شهرية</h3>
-      <p class="price">5$<br>50,000 SYP</p>
-      <ul>
-        <li>دخول غير محدود</li>
-        <li>تمارين جماعية</li>
-        <li>تتبع تقدم</li>
-      </ul>
-      <a href="#subscriptionForm" class="btn">اشترك الآن</a>
-    </div>
-
-    <div class="card popular">
-      <h3>باقة سنوية</h3>
-      <p class="price">55$<br>550,000 SYP</p>
-      <ul>
-        <li>دخول غير محدود</li>
-        <li>مدرّب شخصي</li>
-        <li>حصص تغذية</li>
-      </ul>
-      <a href="#subscriptionForm" class="btn">الأكثر شهرة ⭐</a>
-    </div>
-
-    <div class="card">
-      <h3>باقة 6 أشهر</h3>
-      <p class="price">100$<br>1,000,000 SYP</p>
-      <ul>
-        <li>VIP استضافة</li>
-        <li>خطة مخصصة</li>
-        <li>حصص خاصة + برنامج تغذية</li>
-      </ul>
-      <a href="#subscriptionForm" class="btn">اشترك الآن</a>
-    </div>
-  </section>
-
-  <!-- ✅ نموذج الاشتراك -->
-  <section class="subscription-form" id="subscriptionForm">
-    <h2>اشترك الآن</h2>
-    <p>املأ معلوماتك وسنتواصل معك</p>
-
-<!-- <form action="https://formsubmit.co/mmmm12102005@gmail.com" method="POST"> -->
-    <form action="https://script.google.com/macros/s/AKfycbyI4A5-J135rmgWX61FYeeeNfnLGpwbYiHM0yMJpRYHW3RBEyOXeyiMIS8SwE-4VdO-XA/exec" method="POST">
-
-      <input type="text" name="fullName" placeholder="الاسم الكامل" required>
-      <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-      <input type="tel" name="phone" placeholder="رقم الهاتف" required>
-
-      <select name="plan" required>
-        <option value="">اختر الباقة</option>
-        <option value="monthly">شهرية</option>
-        <option value="yearly">سنوية</option>
-        <option value="premium">Premium</option>
-      </select>
-  <label><input type="radio" name="gender" value="ذكر" required> رجال</label>
-  <label><input type="radio" name="gender" value="أنثى"> نساء</label>
-<div class="success-message" id="successMessage">
-  🎉 تم الإرسال بنجاح! سنقوم بالتواصل معك قريبًا.
-</div>
-
-      <button type="submit">اشترك الآن</button>
-    </form>
-  </section>
-
-  <script src="script.js"></script>
-</body>
-</html>
-=======
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GymPro  - الاشتراك</title>
-  <link rel="stylesheet" href="subscribe.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-
- <section class="subscription-hero" id="subscriptionSection">
-  <div class="overlay">
-    <h2>اختر نوع الاشتراك</h2>
-    <p>يرجى اختيار نوع الحساب المناسب لتخصيص تجربتك</p>
-    <form id="genderSelector">
-      <label><input type="radio" name="gender" value="male"> رجال</label>
-      <label><input type="radio" name="gender" value="female"> نساء</label>
-    </form>
-
-    <!-- 👇 أوقات الدوام -->
-    <div class="schedule-info" id="scheduleInfo">
-      <!-- بيتعبّى تلقائيًا بالجافاسكربت -->
-    </div>
+  <div id="successMessage" style="display: none; color: green; text-align: center; font-weight: bold;">
+    🎉 تم الإرسال بنجاح!
   </div>
-</section>
 
-  <!-- ✅ الباقات -->
-  <section class="plans">
-    <div class="card">
-      <h3>باقة شهرية</h3>
-      <p class="price">5$<br>50,000 SYP</p>
-      <ul>
-        <li>دخول غير محدود</li>
-        <li>تمارين جماعية</li>
-        <li>تتبع تقدم</li>
-      </ul>
-      <a href="#subscriptionForm" class="btn">اشترك الآن</a>
-    </div>
+  <button type="submit" style="background-color: #007bff; color: white; padding: 12px; border: none; border-radius: 6px; width: 100%; font-weight: bold;">
+    اشترك الآن
+  </button>
+</form>
 
-    <div class="card popular">
-      <h3>باقة سنوية</h3>
-      <p class="price">55$<br>550,000 SYP</p>
-      <ul>
-        <li>دخول غير محدود</li>
-        <li>مدرّب شخصي</li>
-        <li>حصص تغذية</li>
-      </ul>
-      <a href="#subscriptionForm" class="btn">الأكثر شهرة ⭐</a>
-    </div>
+      <!-- 💬 واتساب -->
+      <div id="whatsappOption" style="display: none; margin-top: 20px; text-align: center;">
+        <a href="https://wa.me/963995297964?text=مرحباً، أرغب بالاشتراك في النادي 💪🏼" target="_blank" style="
+          display: inline-flex;
+          align-items: center;
+          background-color: #25D366;
+          color: white;
+          padding: 12px 18px;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 16px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          transition: background-color 0.3s;
+        " onmouseover="this.style.backgroundColor='#1ebc59'" onmouseout="this.style.backgroundColor='#25D366'">
+          <img src="https://www.svgrepo.com/show/184120/whatsapp.svg" alt="WhatsApp" style="width: 24px; height: 24px; margin-left: 8px;" />
+          أرسل طلب الاشتراك عبر واتساب
+        </a>
+      </div>
+    </section>
 
-    <div class="card">
-      <h3>باقة 6 أشهر</h3>
-      <p class="price">100$<br>1,000,000 SYP</p>
-      <ul>
-        <li>VIP استضافة</li>
-        <li>خطة مخصصة</li>
-        <li>حصص خاصة + برنامج تغذية</li>
-      </ul>
-      <a href="#subscriptionForm" class="btn">اشترك الآن</a>
-    </div>
-  </section>
+    <script>
+      function toggleForm() {
+        const method = document.querySelector('input[name="method"]:checked').value;
+        document.getElementById("emailForm").style.display = method === "email" ? "block" : "none";
+        document.getElementById("whatsappOption").style.display = method === "whatsapp" ? "block" : "none";
+      }
+      toggleForm();
+    </script>
 
-  <!-- ✅ نموذج الاشتراك -->
-  <section class="subscription-form" id="subscriptionForm">
-    <h2>اشترك الآن</h2>
-    <p>املأ معلوماتك وسنتواصل معك</p>
-
-<!-- <form action="https://formsubmit.co/mmmm12102005@gmail.com" method="POST"> -->
-    <form action="https://script.google.com/macros/s/AKfycbyI4A5-J135rmgWX61FYeeeNfnLGpwbYiHM0yMJpRYHW3RBEyOXeyiMIS8SwE-4VdO-XA/exec" method="POST">
-
-      <input type="text" name="fullName" placeholder="الاسم الكامل" required>
-      <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-      <input type="tel" name="phone" placeholder="رقم الهاتف" required>
-
-      <select name="plan" required>
-        <option value="">اختر الباقة</option>
-        <option value="monthly">شهرية</option>
-        <option value="yearly">سنوية</option>
-        <option value="premium">Premium</option>
-      </select>
-  <label><input type="radio" name="gender" value="ذكر" required> رجال</label>
-  <label><input type="radio" name="gender" value="أنثى"> نساء</label>
-<div class="success-message" id="successMessage">
-  🎉 تم الإرسال بنجاح! سنقوم بالتواصل معك قريبًا.
-</div>
-
-      <button type="submit">اشترك الآن</button>
-    </form>
-  </section>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
->>>>>>> a176f541c6ba20235ce2a7b7773f98ced960cf70
