@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  background-color: #F5F5F5;
+  color: #1C1C1C;
+}
+
+header {
+  background-color: #1C1C1C;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+nav a {
+  color: #A8E6CF;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('https://res.cloudinary.com/dchrfb1h9/image/upload/v1750877986/pexels-marta-nogueira-589022975-17093368_xifpet.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.overlay {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(245, 245, 245, 0.92);
+  padding: 3rem;
+  border-radius: 20px;
+  max-width: 600px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.overlay h2 {
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  color: #1C1C1C;
+}
+
+.overlay p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.btn {
+  background-color: #379683;
+  color: white;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.btn:hover {
+  background-color: #2e7161;
+  transform: scale(1.08);
+}
+
+footer {
+  background-color: #1C1C1C;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}

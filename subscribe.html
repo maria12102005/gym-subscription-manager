@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GymPro  - الاشتراك</title>
+  <link rel="stylesheet" href="subscribe.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+ <section class="subscription-hero" id="subscriptionSection">
+  <div class="overlay">
+    <h2>اختر نوع الاشتراك</h2>
+    <p>يرجى اختيار نوع الحساب المناسب لتخصيص تجربتك</p>
+    <form id="genderSelector">
+      <label><input type="radio" name="gender" value="male"> رجال</label>
+      <label><input type="radio" name="gender" value="female"> نساء</label>
+    </form>
+
+    <!-- 👇 أوقات الدوام -->
+    <div class="schedule-info" id="scheduleInfo">
+      <!-- بيتعبّى تلقائيًا بالجافاسكربت -->
+    </div>
+  </div>
+</section>
+
+  <!-- ✅ الباقات -->
+  <section class="plans">
+    <div class="card">
+      <h3>باقة شهرية</h3>
+      <p class="price">5$<br>50,000 SYP</p>
+      <ul>
+        <li>دخول غير محدود</li>
+        <li>تمارين جماعية</li>
+        <li>تتبع تقدم</li>
+      </ul>
+      <a href="#subscriptionForm" class="btn">اشترك الآن</a>
+    </div>
+
+    <div class="card popular">
+      <h3>باقة سنوية</h3>
+      <p class="price">55$<br>550,000 SYP</p>
+      <ul>
+        <li>دخول غير محدود</li>
+        <li>مدرّب شخصي</li>
+        <li>حصص تغذية</li>
+      </ul>
+      <a href="#subscriptionForm" class="btn">الأكثر شهرة ⭐</a>
+    </div>
+
+    <div class="card">
+      <h3>باقة 6 أشهر</h3>
+      <p class="price">100$<br>1,000,000 SYP</p>
+      <ul>
+        <li>VIP استضافة</li>
+        <li>خطة مخصصة</li>
+        <li>حصص خاصة + برنامج تغذية</li>
+      </ul>
+      <a href="#subscriptionForm" class="btn">اشترك الآن</a>
+    </div>
+  </section>
+
+  <!-- ✅ نموذج الاشتراك -->
+  <section class="subscription-form" id="subscriptionForm">
+    <h2>اشترك الآن</h2>
+    <p>املأ معلوماتك وسنتواصل معك</p>
+
+<!-- <form action="https://formsubmit.co/mmmm12102005@gmail.com" method="POST"> -->
+    <form action="https://script.google.com/macros/s/AKfycbyI4A5-J135rmgWX61FYeeeNfnLGpwbYiHM0yMJpRYHW3RBEyOXeyiMIS8SwE-4VdO-XA/exec" method="POST">
+
+      <input type="text" name="fullName" placeholder="الاسم الكامل" required>
+      <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+      <input type="tel" name="phone" placeholder="رقم الهاتف" required>
+
+      <select name="plan" required>
+        <option value="">اختر الباقة</option>
+        <option value="monthly">شهرية</option>
+        <option value="yearly">سنوية</option>
+        <option value="premium">Premium</option>
+      </select>
+  <label><input type="radio" name="gender" value="ذكر" required> رجال</label>
+  <label><input type="radio" name="gender" value="أنثى"> نساء</label>
+<div class="success-message" id="successMessage">
+  🎉 تم الإرسال بنجاح! سنقوم بالتواصل معك قريبًا.
+</div>
+
+      <button type="submit">اشترك الآن</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
