@@ -206,6 +206,20 @@
       }
     }
   </script>
+<script>
+  // منع الزر اليميني
+  document.addEventListener('contextmenu', event => event.preventDefault());
 
+  // منع اختصارات النسخ والعرض
+  document.onkeydown = function(e) {
+    if (e.ctrlKey && ['u', 's', 'c'].includes(e.key.toLowerCase())) {
+      e.preventDefault();
+    }
+  };
+</script>
 </body>
+<footer><p style="text-align:center; font-size:12px; color:#888;">
+  جميع الحقوق محفوظة © 2025 GymPro – تصميم وتطوير: Maria<br>
+  All rights reserved © 2025 GymPro – Designed & Developed by Maria
+</p></footer>
 </html>
