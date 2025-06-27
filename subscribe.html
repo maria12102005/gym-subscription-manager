@@ -99,7 +99,69 @@
     اشترك الآن
   </button>
 </form>
+<p style="text-align:center; font-weight:bold; margin-top:20px;">
+📌 بعد إرسال النموذج، سيظهر رمز الاشتراك (QR) الخاص بك هنا تلقائيًا 👇
+</p>
+<style>
+  #qrCard {
+    animation: fadeIn 1s ease-in-out;
+  }
 
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+</style>
+ <div id="qrCard" style="display:none; text-align:center; margin-top:20px;">
+  <h3>🎫 رمز الاشتراك الخاص بك</h3>
+  <img id="qrImage" src="" alt="QR Code" style="width:200px; margin-bottom:10px;">
+</div>
+<script>
+  const form = document.getElementById("emailForm");
+  const qrImage = document.getElementById("qrImage");
+  const qrCard = document.getElementById("qrCard");
+  const successMessage = document.getElementById("successMessage");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    const fullName = data.get("fullName");
+    const email = data.get("email");
+    const phone = data.get("phone");
+    const plan = data.get("plan");
+    const gender = data.get("gender");
+    const weight = data.get("weight");
+    const height = data.get("height");
+    const today = new Date().toLocaleDateString("ar-SY");
+
+    // نص الـ QR
+    const qrText = `👤 الاسم: ${fullName}\n📞 الهاتف: ${phone}\n💼 الباقة: ${plan}\n⚖️ الوزن: ${weight} كغ\n📏 الطول: ${height} سم\n📆 الاشتراك: ${today}`;
+
+const qrURL = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(qrText)}`;
+    fetch(form.action, { method: "POST", body: data })
+      .then((res) => {
+        if (res.ok) {
+          qrImage.src = qrURL;
+          qrCard.style.display = "block";
+          successMessage.style.display = "block";
+          form.reset();
+        } else {
+          alert("❌ حدث خطأ أثناء الإرسال");
+        }
+      });
+  });
+</script>
+<button onclick="downloadQR()" style="margin-top: 10px;">📥 تنزيل رمز الاشتراك</button>
+
+<script>
+  function downloadQR() {
+    const link = document.createElement('a');
+    link.href = document.getElementById("qrImage").src;
+    link.download = "GymPro-QR.png";
+    link.click();
+  }
+</script>
       <!-- 💬 واتساب -->
       <div id="whatsappOption" style="display: none; margin-top: 20px; text-align: center;">
    <a href="https://wa.me/963995297964?text=مرحباً، أرغب بالاشتراك في النادي 💪🏼%0A%0Aالاسم الكامل: _______%0Aالوزن: _______ كغ%0Aالنوع: _______%0Aنوع الاشتراك: _______%0Aالطول: _______ سم" 
@@ -124,10 +186,6 @@
 </a>
       </div>
     </section>
-    <div style="text-align: center; margin-top: 40px;">
-  <p style="font-weight: bold; font-size: 18px;">📱 امسح الباركود لزيارة موقع التسجيل مباشرة:</p>
-  <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://qrsu.io/khnX8&size=300x300" alt="QR Code للتسجيل" style="width: 220px; height: 220px; border: 4px solid #25D366; border-radius: 12px; padding: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
-</div>
 
     <script>
       function toggleForm() {
