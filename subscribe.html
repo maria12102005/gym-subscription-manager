@@ -71,10 +71,13 @@
       </div>
 
       <!-- 📧 النموذج -->
-<form id="emailForm" action="https://script.google.com/macros/s/AKfycbwSiuWt-3eeEF2O83vQDjXN_G782C8pI8tzl8W8OwtukbfJzM9WUZk_rHRJMOMY2fhZtg/exec" method="POST" style="border: 1px solid #ccc; border-radius: 10px; padding: 15px; max-width: 600px; margin: auto;">
+<form id="emailForm" action="https://script.google.com/macros/s/AKfycbwjVTrgN6g9ef91oT-zqMi7V8dGO-kCoJQY69Q5UqFAYoW5A_0F8VV-3nMi1ug0d659Kw/exec" method="POST" style="border: 1px solid #ccc; border-radius: 10px; padding: 15px; max-width: 600px; margin: auto;">
   <input type="text" name="fullName" placeholder="الاسم الكامل" required style="width: 100%; padding: 10px; margin: 5px 0;">
   <input type="email" name="email" placeholder="البريد الإلكتروني" required style="width: 100%; padding: 10px; margin: 5px 0;">
   <input type="tel" name="phone" placeholder="رقم الهاتف" required style="width: 100%; padding: 10px; margin: 5px 0;">
+<input type="number" name="weight" placeholder="الوزن (كغ)" required />
+<input type="number" name="height" placeholder="الطول (سم)" required />
+
 
   <select name="plan" required style="width: 100%; padding: 10px; margin: 5px 0;">
     <option value="">اختر الباقة</option>
@@ -99,24 +102,32 @@
 
       <!-- 💬 واتساب -->
       <div id="whatsappOption" style="display: none; margin-top: 20px; text-align: center;">
-        <a href="https://wa.me/963995297964?text=مرحباً، أرغب بالاشتراك في النادي 💪🏼" target="_blank" style="
-          display: inline-flex;
-          align-items: center;
-          background-color: #25D366;
-          color: white;
-          padding: 12px 18px;
-          border-radius: 8px;
-          text-decoration: none;
-          font-weight: bold;
-          font-size: 16px;
-          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-          transition: background-color 0.3s;
-        " onmouseover="this.style.backgroundColor='#1ebc59'" onmouseout="this.style.backgroundColor='#25D366'">
-          <img src="https://www.svgrepo.com/show/184120/whatsapp.svg" alt="WhatsApp" style="width: 24px; height: 24px; margin-left: 8px;" />
-          أرسل طلب الاشتراك عبر واتساب
-        </a>
+   <a href="https://wa.me/963995297964?text=مرحباً، أرغب بالاشتراك في النادي 💪🏼%0A%0Aالاسم الكامل: _______%0Aالوزن: _______ كغ%0Aالنوع: _______%0Aنوع الاشتراك: _______%0Aالطول: _______ سم" 
+   target="_blank"
+   style="
+     display: inline-flex;
+     align-items: center;
+     background-color: #25D366;
+     color: white;
+     padding: 12px 18px;
+     border-radius: 8px;
+     text-decoration: none;
+     font-weight: bold;
+     font-size: 16px;
+     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+     transition: background-color 0.3s;
+   "
+   onmouseover="this.style.backgroundColor='#1ebc59'" 
+   onmouseout="this.style.backgroundColor='#25D366'">
+  <img src="https://www.svgrepo.com/show/184120/whatsapp.svg" alt="WhatsApp" style="width: 24px; height: 24px; margin-left: 8px;" />
+  أرسل طلب الاشتراك عبر واتساب
+</a>
       </div>
     </section>
+    <div style="text-align: center; margin-top: 40px;">
+  <p style="font-weight: bold; font-size: 18px;">📱 امسح الباركود لزيارة موقع التسجيل مباشرة:</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://qrsu.io/khnX8&size=300x300" alt="QR Code للتسجيل" style="width: 220px; height: 220px; border: 4px solid #25D366; border-radius: 12px; padding: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+</div>
 
     <script>
       function toggleForm() {
